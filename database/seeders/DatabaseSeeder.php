@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         //\App\Models\User::factory(1)->create();
 
         \App\Models\User::factory()->state([
-            'password' => env('ADMIN_USER_PASSWORD'),
+            'password' => bcrypt(env('ADMIN_USER_PASSWORD')),
         ])
         ->count(1)
         ->create();
